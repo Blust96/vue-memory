@@ -1,5 +1,5 @@
 <template>
-    <div @click="flipCard" v-bind:class="{ 'game-board-card-flipped': card.flipped }" class="game-board-card">
+    <div @click="flipCard" v-bind:class="{ 'game-board-card-flipped': card.flipped }" class="game-board-card" ref="game-card">
         <div class="game-board-card-inner">
             <div class="game-board-card-front"></div>
             <div class="game-board-card-back">
@@ -10,11 +10,19 @@
 </template>
 
 <script>
+import VanillaTilt from 'vanilla-tilt';
+
 export default {
     props: {
         card: Object,
         flipCard: Function,
     },
+    mounted() {
+        VanillaTilt.init(this.$refs['game-card'], {
+            reverse: true,
+            transition: true,
+        });
+    }
 }
 </script>
 
