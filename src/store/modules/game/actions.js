@@ -1,24 +1,7 @@
 import router from '@/router';
 import { getRandomImagesList } from '@/api/picsum';
 
-const initState = {
-    players: [],
-    cards: [],
-    cardsNumber: 8,
-    currentPlayer: 0,
-    winner: {},
-}
-
-// Initial state
-const state = initState;
-
-// Getters
-const getters = {
-
-}
-
-// Actions
-const actions = {
+export default {
     async createCards({ state, commit }) {
         try {
             const imagesListSize = state.cardsNumber / 2;
@@ -55,7 +38,7 @@ const actions = {
     },
 
     resetGame({ commit }) {
-        commit('setInitialState');
+        commit('resetGameState');
     },
 
     toggleCardFlip({ commit }, cardIndex) {
@@ -92,46 +75,4 @@ const actions = {
         commit('setWinner', { winner });
         router.push('/end');
     },
-}
-
-// Mutations
-const mutations = {
-    setInitialState(state) {
-        console.log(state);
-        state = initState;
-    },
-
-    setPlayers(state, { players }) {
-        state.players = players;
-    },
-
-    setCurrentPlayer(state, { currentPlayer }) {
-        state.currentPlayer = currentPlayer;
-    },
-
-    increasePlayerScore(state) {
-        state.players[state.currentPlayer].score += 1;
-    },
-
-    setWinner(state, { winner }) {
-        state.winner = winner;
-    },
-
-    setCards(state, { randomCards }) {
-        state.cards = randomCards;
-    },
-
-    setCardFlip(state, { cardIndex })
-    {
-        state.cards[cardIndex].flipped = !state.cards[cardIndex].flipped;
-    },
-}
-
-// Exports
-export default {
-    namespaced: true,
-    state,
-    getters,
-    actions,
-    mutations,
 }

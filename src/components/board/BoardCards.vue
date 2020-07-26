@@ -13,6 +13,7 @@ export default {
     data() {
         return {
             flippedCards: [],
+            checkingCards: false,
         }
     },
     methods: {
@@ -22,13 +23,20 @@ export default {
         ]),
 
         flipCard(index) {
-            if (!this.cards[index].flipped) {
-                this.toggleCardFlip(index);
-                this.flippedCards.push({ index, ...this.cards[index] });
-            }
-            if (this.flippedCards.length === 2) {
-                this.endRound(this.flippedCards);
-                this.flippedCards = [];
+            if (!this.checkingCards) {
+                if (!this.cards[index].flipped) {
+                    this.toggleCardFlip(index);
+                    this.flippedCards.push({ index, ...this.cards[index] });
+                }
+
+                if (this.flippedCards.length === 2) {
+                    this.checkingCards = true;
+                    setTimeout(() => {
+                        this.endRound(this.flippedCards);
+                        this.flippedCards = [];
+                        this.checkingCards = false;
+                    }, 1000);
+                }
             }
         },
     },
@@ -38,3 +46,13 @@ export default {
     components: { BoardCardsItem }
 }
 </script>
+
+<style>
+    #game-board-cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: 0 auto;
+    }
+</style>
