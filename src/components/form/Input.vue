@@ -1,21 +1,22 @@
 <template>
-    <input v-model="value" v-on:change="emitValue"/>
+    <input v-model="value"/>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            value: '',
-        }
-    },
     props: {
         playerIndex: Number,
+        playerName: String,
     },
-    methods: {
-        emitValue() {
-            this.$emit('updateInput', this.playerIndex, this.value);
-        },
-    },
+    computed: {
+        value: {
+            get() {
+                return this.playerName;
+            },
+            set(newValue) {
+                this.$emit('updateInput', this.playerIndex, newValue);
+            }
+        }
+    }
 }
 </script>
