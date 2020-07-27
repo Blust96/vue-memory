@@ -6,33 +6,26 @@
                 <Label :value="'Joueur ' + (index + 1) + '*'" :for="'joueur-' + (index + 1)" />
                 <Input :id="'joueur-' + (index + 1)" type="text" v-on:updateInput="setPlayerName" :playerIndex="index" :minlength="4" required />
             </div>
+            <Select v-on:updateSelect="setCardsNumber" :cardsNumber="cardsNumber" />
             <button type="submit">Create game</button>
         </form>
     </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 
 import Label from '@/components/form/Label';
 import Input from '@/components/form/Input';
+import Select from '@/components/form/Select';
 
 export default {
-    data() {
-        return {
-            players: [
-                {
-                    id: 0,
-                    score: 0,
-                    name: '',
-                },
-                {
-                    id: 1,
-                    score: 0,
-                    name: '',
-                }
-            ],
-        }
+    computed: {
+        ...mapState('game', 
+        [
+            'players',
+            'cardsNumber',
+        ]),
     },
     methods: {
         ...mapActions('game', [
@@ -40,7 +33,11 @@ export default {
         ]),
 
         setPlayerName(index, value) {
-            this.players[index].name = value;
+            this.$store.commit('game/setPlayerName', { index, name: value });
+        },
+
+        setCardsNumber(value) {
+            this.$store.commit('game/setCardsNumber', { cardsNumber: value });
         },
 
         async startGame() {
@@ -48,7 +45,7 @@ export default {
             this.$router.push('game');
         },
     },
-    components: { Label, Input }
+    components: { Label, Input, Select }
 }
 </script>
 

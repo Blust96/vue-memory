@@ -29,9 +29,8 @@ export default {
         }
     },
 
-    async createGame({ commit, dispatch }, players) {
+    async createGame({ commit, dispatch }) {
         await dispatch('createCards');
-        commit('setPlayers', { players });
 
         let currentPlayer = Math.round(Math.random());
         commit('setCurrentPlayer', { currentPlayer });

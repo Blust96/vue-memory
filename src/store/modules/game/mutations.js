@@ -11,6 +11,10 @@ export default {
         state.players = players;
     },
 
+    setPlayerName(state, { index, name }) {
+        state.players[index].name = name;
+    },
+
     setCurrentPlayer(state, { currentPlayer }) {
         state.currentPlayer = currentPlayer;
     },
@@ -21,6 +25,10 @@ export default {
 
     setWinner(state, { winner }) {
         state.winner = winner;
+    },
+
+    setCardsNumber(state, { cardsNumber }) {
+        state.cardsNumber = cardsNumber;
     },
 
     setCards(state, { randomCards }) {

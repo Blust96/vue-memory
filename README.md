@@ -8,7 +8,7 @@ It's also using [VanillaTilt.js](https://github.com/micku7zu/vanilla-tilt.js) to
 - [x] Cards generation
 - [x] Game logic
 - [x] Game restart
-- [ ] Custom cards number
+- [X] Custom cards number
 - [ ] Game restart with new players
 - [ ] Cards design
 - [ ] Form design

@@ -1,5 +1,16 @@
 export default {
-    players: [],
+    players: [
+        {
+            id: 0,
+            score: 0,
+            name: '',
+        },
+        {
+            id: 1,
+            score: 0,
+            name: '',
+        },
+    ],
     cards: [],
     cardsNumber: 8,
     currentPlayer: 0,
