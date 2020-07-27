@@ -68,8 +68,8 @@ export default {
     }
 
     .game-board-card img {
-        width: 300px;
-        height: 200px;
+        width: 100%;
+        height: auto;
         border-radius: 8px;
     }
 </style>
