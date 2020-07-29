@@ -2,9 +2,9 @@
 
 This project is a local multiplayer memory game based on Vue.js.\
 It's using [Picsum API](https://picsum.photos/) to get random images.\
-It's also using [VanillaTilt.js](https://github.com/micku7zu/vanilla-tilt.js) to animate cards on hover.\
+It's also using [VanillaTilt.js](https://github.com/micku7zu/vanilla-tilt.js) to animate cards on hover.
 
-You can see it running live at : [www.qbohain.com/vue-memory](https://www.qbohain.com/vue-memory/)\
+You can see it running live at : [www.qbohain.com/vue-memory](https://www.qbohain.com/vue-memory/)
 
 ## Todo
 - [x] Cards generation
