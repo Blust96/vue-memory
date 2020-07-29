@@ -1,10 +1,11 @@
 <template>
     <div id="game-board">
         <div id="game-board-players">
-            <BoardPlayer v-for="player in players" :key="player.id" :player="player" />
+            <BoardPlayer :key="players[0].id" :player="players[0]" />
             Au tour de : {{ players[currentPlayer].name }}
-            <BoardCards :cards="cards" />
+            <BoardPlayer :key="players[1].id" :player="players[1]" />
         </div>
+        <BoardCards :cards="cards" />
     </div>
 </template>
 
@@ -21,3 +22,18 @@ export default {
     components: { BoardPlayer, BoardCards }
 }
 </script>
+
+<style>
+#game-board {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#game-board-players {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 auto;
+}
+</style>

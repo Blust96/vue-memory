@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <h1>MEMORY GAME</h1>
         <transition name="fade" mode="out-in">
             <router-view />
         </transition>
@@ -12,7 +13,11 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #2c3e50;
+    color: var(--primary-color);
+}
+
+h1 {
+    margin: 1rem 0;
 }
 
 .fade-enter-active, .fade-leave-active {

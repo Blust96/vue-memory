@@ -1,6 +1,5 @@
 <template>
     <div id="end">
-        <h1>Memory Game</h1>
         <p v-if="winner !== null">Le gagnant est {{ winner.name }} avec {{ winner.score }} points !</p>
         <p v-else>Egalité !</p>
         <Form :submitAction="restartGame" />
@@ -35,3 +34,9 @@ export default {
     components: { Form }
 }
 </script>
+
+<style>
+p {
+    margin-bottom: 1.2rem;
+}
+</style>

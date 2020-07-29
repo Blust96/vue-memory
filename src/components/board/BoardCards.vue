@@ -52,7 +52,7 @@ export default {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        width: 80%;
-        margin: 0 auto;
+        justify-content: space-evenly;
+        width: 100%;
     }
 </style>

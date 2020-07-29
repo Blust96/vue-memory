@@ -1,6 +1,5 @@
 <template>
     <div id="home">
-        <h1>Memory Game</h1>
         <Form :submitAction="startGame" />
     </div>
 </template>

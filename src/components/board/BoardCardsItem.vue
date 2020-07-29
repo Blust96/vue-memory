@@ -57,7 +57,7 @@ export default {
     }
 
     .game-board-card-front {
-        background-color: #bbb;
+        background-color: var(--primary-color);
         color: black;
     }
 

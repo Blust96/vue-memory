@@ -1,0 +1,29 @@
+:root {
+	--primary-color: #00FFFF;
+	--secondary-color: #2C363F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--secondary-color);
+}
+
+input,
+label
+{
+	display:inline-block;
+	vertical-align:middle;
+	white-space:normal;
+	background:none;
+	line-height:1;
+}
+
+input:focus
+{
+	outline:0;
+}

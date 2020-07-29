@@ -1,6 +1,5 @@
 <template>
     <div id="game">
-        <h1>Memory Game</h1>
         <Board :cards="cards" :players="players" :currentPlayer="currentPlayer" />
     </div>
 </template>

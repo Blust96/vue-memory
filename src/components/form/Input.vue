@@ -20,3 +20,9 @@ export default {
     }
 }
 </script>
+
+<style>
+input {
+    position: relative;
+}
+</style>
