@@ -2,9 +2,7 @@
     <div @click="flipCard" v-bind:class="{ 'game-board-card-flipped': card.flipped }" class="game-board-card" ref="game-card">
         <div class="game-board-card-inner">
             <div class="game-board-card-front"></div>
-            <div class="game-board-card-back">
-                <img :src="card.src"/>
-            </div>
+            <div class="game-board-card-back" :style="{ backgroundImage: `url('${card.src}')` }"></div>
         </div>
     </div>
 </template>
@@ -29,8 +27,8 @@ export default {
 <style>
     .game-board-card {
         background-color: transparent;
-        margin: 1.2rem;
-        width: calc(25% - (3 * 1.2rem));
+        margin: 1rem;
+        width: calc(25% - (3 * 1rem));
         height: 200px;
         perspective: 1000px;
     }
@@ -65,11 +63,8 @@ export default {
 
     .game-board-card-back {
         transform: rotateY(180deg);
-    }
-
-    .game-board-card img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
+        background-size:cover; 
+        background-position:center center; 
+        background-repeat:no-repeat; 
     }
 </style>
